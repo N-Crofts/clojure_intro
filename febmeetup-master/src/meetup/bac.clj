@@ -2,9 +2,11 @@
   (:require [clojure.string :as str]
             [clj-http.client :as client]))
 
+; Api key removed 
+
 (defn get-weather-data [zip-code]
   (let [api-key "4b09896fa988b5b6545a5ee39135e406"
-        uri (str "http://api.openweathermap.org/data/2.5/weather?zip=" zip-code ",us&appid=" api-key)]
+        uri (str "http://api.openweathermap.org/data/2.5/weather?zip=" zip-code "" api-key)]
     (client/get uri {:accept :json
                      :as     :json
                      :throw-exceptions false
